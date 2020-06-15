@@ -181,9 +181,6 @@ func Generate(node *v1alpha1.Node) error {
 				if err != nil {
 					return err
 				}
-				fmt.Printf("----------%s----------\n", node.AliasConfig.CommonName)
-				fmt.Printf("cert to be imported: %+v \n", string(certPEM))
-				fmt.Printf("key to be imported: %+v \n", string(keyPEM))
 				err = ImportKeyPairFromPEMs(certPEM, keyPEM, storePassword, node.AliasConfig)
 				if err != nil {
 					return err
